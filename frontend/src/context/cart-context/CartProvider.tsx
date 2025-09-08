@@ -105,7 +105,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     fetchCart();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [token]);
 
   return (
     <CartContext.Provider
