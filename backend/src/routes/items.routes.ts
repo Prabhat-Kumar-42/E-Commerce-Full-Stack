@@ -15,8 +15,8 @@ const router = Router();
 
 // Public routes
 router.get("/", getItems);
-router.get("/:id", getItemById);
 router.get("/categories", getCategories);
+router.get("/:id", getItemById);
 
 // Protected routes (for admins or CMS usage)
 router.post("/", authenticate, upload, createItem);
