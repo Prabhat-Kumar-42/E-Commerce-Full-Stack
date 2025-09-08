@@ -34,7 +34,7 @@ export default function CreateItemPage() {
     formData.append("description", description);
     formData.append("price", price);
     formData.append("category", category);
-    if (imageFile) formData.append("imageFile", imageFile);
+    if (imageFile) formData.append("image", imageFile);
 
     try {
       setLoading(true);
