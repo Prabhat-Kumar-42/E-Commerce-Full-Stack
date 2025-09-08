@@ -6,6 +6,7 @@ import {
   updateItem,
   deleteItem,
   getCategories,
+  getMyItems,
 } from "../controllers/items.controller.js";
 import { authenticate } from "../middlewares/auth.middleware.js";
 import { upload } from "../middlewares/upload.middleware.js";
@@ -16,6 +17,7 @@ const router = Router();
 // Public routes
 router.get("/", getItems);
 router.get("/categories", getCategories);
+router.get("/my-items", authenticate, getMyItems);
 router.get("/:id", getItemById);
 
 // Protected routes (for admins or CMS usage)

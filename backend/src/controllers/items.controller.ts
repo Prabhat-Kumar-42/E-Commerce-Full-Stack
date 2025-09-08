@@ -187,3 +187,15 @@ export async function deleteItem(req: AuthRequest, res: Response, next: NextFunc
     next(err);
   }
 }
+
+export async function getMyItems(req: AuthRequest, res: Response, next: NextFunction) {
+  try {
+    const items = await prisma.item.findMany({
+      where: { userId: req.user.id },
+      orderBy: { createdAt: "desc" },
+    });
+    return res.json(items);
+  } catch (err) {
+    next(err);
+  }
+}
