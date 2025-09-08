@@ -23,7 +23,7 @@ export default function EditItemPage() {
     if (!id) return;
     setLoading(true);
     axios
-      .get(`http://localhost:4000/items/${id}`)
+      .get(`/api/items/${id}`)
       .then((res) => {
         const item = res.data;
         setTitle(item.title);
@@ -60,11 +60,11 @@ export default function EditItemPage() {
     formData.append("description", description);
     formData.append("price", price);
     formData.append("category", category);
-    if (imageFile) formData.append("imageFile", imageFile);
+    if (imageFile) formData.append("image", imageFile);
 
     try {
       setSaving(true);
-      await axios.put(`http://localhost:4000/items/${id}`, formData, {
+      await axios.put(`/api/items/${id}`, formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert("Item updated successfully!");
