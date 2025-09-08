@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import type { User } from "../types/user.type";
 
-interface User {
-  id: string;
-  email: string;
-  createdAt?: string; 
-}
+// /src/pages/ProfilePage.tsx
 
 export default function ProfilePage() {
   const navigate = useNavigate();

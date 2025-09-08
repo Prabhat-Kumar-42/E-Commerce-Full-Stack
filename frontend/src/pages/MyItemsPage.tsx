@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/auth-context/auth-context";
 import type { Item } from "../types/item.type";
 
+// /src/pages/MyItemsPage.tsx
 export default function MyItemsPage() {
   const { token } = useAuth();
   const navigate = useNavigate();

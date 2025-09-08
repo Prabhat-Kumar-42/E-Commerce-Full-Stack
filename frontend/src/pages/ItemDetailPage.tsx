@@ -4,6 +4,7 @@ import axios from "axios";
 import { useCart } from "../context/cart-context/cart-context";
 import type { Item } from "../types/item.type";
 
+// /src/pages/ItemDetailPage.tsx
 export default function ItemDetailPage() {
   const { id } = useParams<{ id: string }>(); // Fetch item ID from URL
   const [item, setItem] = useState<Item | null>(null);

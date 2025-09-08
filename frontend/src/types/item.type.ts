@@ -1,3 +1,5 @@
+
+// src/types/item.type.ts
 export interface Item {
   id: string;
   title: string;

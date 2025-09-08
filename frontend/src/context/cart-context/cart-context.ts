@@ -2,6 +2,7 @@
 import { createContext, useContext } from "react";
 import type { Cart } from "../../types/cart.type";
 
+// /src/context/cart-context/cart-context.ts
 interface CartContextType {
   cart: Cart | null;
   loading: boolean;

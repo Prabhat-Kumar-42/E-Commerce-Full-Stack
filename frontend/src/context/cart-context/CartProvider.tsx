@@ -5,6 +5,7 @@ import { useAuth } from "../auth-context/auth-context";
 import type { Cart, CartItem } from "../../types/cart.type";
 import type { Item } from "../../types/item.type";
 
+// /src/context/cart-context/CartProvider.tsx
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [cart, setCart] = useState<Cart | null>(null);
   const [loading, setLoading] = useState(true);

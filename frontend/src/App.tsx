@@ -15,6 +15,7 @@ import EditItemPage from "./pages/EditItemPage";
 import ProfilePage from "./pages/ProfilePage";
 import HomePage from "./pages/HomePage";
 
+// /src/App.tsx
 function PrivateRoute({ children }: { children: JSX.Element }) {
   const { user } = useAuth();
   console.log(`user: ${user}`);

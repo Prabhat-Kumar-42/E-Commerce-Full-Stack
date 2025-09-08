@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/auth-context/auth-context";
 
+// /src/pages/CreateItemPage.tsx
 export default function CreateItemPage() {
   const { token } = useAuth();
   const navigate = useNavigate();

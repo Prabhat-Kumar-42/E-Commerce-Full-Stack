@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/auth-context/auth-context";
 
+// /src/pages/HomePage.tsx
 export default function HomePage() {
   const { user } = useAuth();
 

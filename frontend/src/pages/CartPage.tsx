@@ -1,5 +1,6 @@
 import { useCart } from "../context/cart-context/cart-context";
 
+// /src/pages/CartPage.tsx
 export default function CartPage() {
   const { cart, updateCartItem, removeFromCart } = useCart();
 
