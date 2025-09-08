@@ -54,7 +54,6 @@ const supabaseUpload = async (req: any, res: any, next: any) => {
   if (!file) {
     return res.status(400).json({ error: "Image file is required" });
   }
-  console.log("req.file:", file);
   const filePath = `product-images/${Date.now()}-${Math.round(
     Math.random() * 1e9
   )}${path.extname(file.originalname)}`;
