@@ -41,7 +41,7 @@ export default function ItemDetailPage() {
       <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
         {item.imageUrl && (
           <img
-            src={item.imageUrl.startsWith("http") ? item.imageUrl : `/${item.imageUrl}`}
+            src={item.imageUrl.startsWith("http") ? item.imageUrl : `${item.imageUrl}`}
             alt={item.title}
             className="w-full h-80 object-cover"
           />

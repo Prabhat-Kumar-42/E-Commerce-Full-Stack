@@ -122,11 +122,10 @@ export default function ItemsPage() {
                 className="border rounded-lg p-4 bg-white shadow-sm hover:shadow-md transition cursor-pointer"
               >
                 {item.imageUrl && (
-                  <img
-                    src={
+                  <img src={
                       item.imageUrl.startsWith("http")
-                        ? item.imageUrl
-                        : `http://localhost:4000${item.imageUrl}`
+                      ? item.imageUrl
+                      : `${item.imageUrl}`
                     }
                     alt={item.title}
                     className="w-full h-40 object-cover rounded mb-2"

@@ -28,7 +28,7 @@ export default function CartPage() {
                   src={
                     ci.item.imageUrl.startsWith("http")
                       ? ci.item.imageUrl
-                      : `http://localhost:4000${ci.item.imageUrl}`
+                      : `${ci.item.imageUrl}`
                   }
                   alt={ci.item.title}
                   className="w-24 h-24 object-cover rounded"
