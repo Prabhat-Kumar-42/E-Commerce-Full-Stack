@@ -14,7 +14,7 @@ const router = Router();
 // All cart routes require login
 router.get("/", authenticate, getCart);
 router.post("/", authenticate, addToCart);
-router.put("/:id", authenticate, updateCartItem);
-router.delete("/:id", authenticate, removeFromCart);
+router.put("/item/:id", authenticate, updateCartItem);
+router.delete("/item/:id", authenticate, removeFromCart);
 
 export default router;
