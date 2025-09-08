@@ -12,6 +12,7 @@ import { CartProvider } from "./context/cart-context/CartProvider";
 import MyItemsPage from "./pages/MyItemsPage";
 import CreateItemPage from "./pages/CreateItemPage";
 import EditItemPage from "./pages/EditItemPage";
+import ProfilePage from "./pages/ProfilePage";
 
 function PrivateRoute({ children }: { children: JSX.Element }) {
   const { user } = useAuth();
@@ -69,7 +70,14 @@ export default function App() {
                   </PrivateRoute>
                 }
               />
-
+              <Route
+                path="/profile"
+                element={
+                  <PrivateRoute>
+                    <ProfilePage />
+                  </PrivateRoute>
+                }
+              />
               {/* Redirect unknown routes */}
               <Route path="*" element={<Navigate to="/items" />} />
             </Routes>
