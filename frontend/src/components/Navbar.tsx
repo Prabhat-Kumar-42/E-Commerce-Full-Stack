@@ -17,19 +17,30 @@ export default function Navbar() {
         E-Shop
       </Link>
 
-      {/* Links */}
+      {/* Links - Public (Available to everyone) */}
       <div className="flex gap-4 items-center">
         <Link to="/items" className="hover:underline">
           Items
         </Link>
+
+        {/* Links - Available for authenticated users only */}
         {user && (
-          <Link to="/my-items" className="hover:underline">
-            My Items
-          </Link>
+          <>
+            <Link to="/my-items" className="hover:underline">
+              My Items
+            </Link>
+            <Link to="/cart" className="hover:underline">
+              Cart
+            </Link>
+            <Link to="/profile" className="hover:underline">
+              Profile
+            </Link>
+          </>
         )}
-        <Link to="/cart" className="hover:underline">
-          Cart
-        </Link>
+      </div>
+
+      {/* Authentication Links - Login/Signup or Logout */}
+      <div className="flex gap-4 items-center">
         {user ? (
           <button
             onClick={handleLogout}
