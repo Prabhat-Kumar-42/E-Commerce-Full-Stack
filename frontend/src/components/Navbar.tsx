@@ -18,10 +18,15 @@ export default function Navbar() {
       </Link>
 
       {/* Links */}
-      <div className="flex gap-4">
+      <div className="flex gap-4 items-center">
         <Link to="/items" className="hover:underline">
           Items
         </Link>
+        {user && (
+          <Link to="/my-items" className="hover:underline">
+            My Items
+          </Link>
+        )}
         <Link to="/cart" className="hover:underline">
           Cart
         </Link>
