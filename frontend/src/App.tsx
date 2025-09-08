@@ -13,6 +13,7 @@ import MyItemsPage from "./pages/MyItemsPage";
 import CreateItemPage from "./pages/CreateItemPage";
 import EditItemPage from "./pages/EditItemPage";
 import ProfilePage from "./pages/ProfilePage";
+import HomePage from "./pages/HomePage";
 
 function PrivateRoute({ children }: { children: JSX.Element }) {
   const { user } = useAuth();
@@ -78,6 +79,7 @@ export default function App() {
                   </PrivateRoute>
                 }
               />
+              <Route path="/" element={<HomePage />} />
               {/* Redirect unknown routes */}
               <Route path="*" element={<Navigate to="/items" />} />
             </Routes>
