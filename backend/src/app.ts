@@ -27,9 +27,9 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.get("/health", (req, res) => res.send("API is running..."));
 
 // Routes
-app.use("/auth", authRoutes);
-app.use("/items", itemRoutes);
-app.use("/cart", cartRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/items", itemRoutes);
+app.use("/api/cart", cartRoutes);
 
 // Global error handler
 app.use(nonExistingRoutesErrorHandler);
