@@ -1,5 +1,3 @@
-Great 👍 Let’s generate the **`/frontend/README.md`** first. Here’s a well-structured draft for your project:
-
 ---
 
 # Frontend – LocalShop 🛍️
