@@ -9,6 +9,9 @@ import CartPage from "./pages/CartPage";
 import Layout from "./components/Layout";
 import { useAuth } from "./context/auth-context/auth-context";
 import { CartProvider } from "./context/cart-context/CartProvider";
+import MyItemsPage from "./pages/MyItemsPage";
+import CreateItemPage from "./pages/CreateItemPage";
+import EditItemPage from "./pages/EditItemPage";
 
 function PrivateRoute({ children }: { children: JSX.Element }) {
   const { user } = useAuth();
@@ -16,7 +19,6 @@ function PrivateRoute({ children }: { children: JSX.Element }) {
   console.log(user);
   return user ? children : <Navigate to="/login" />;
 }
-
 export default function App() {
   return (
     <AuthProvider>
@@ -24,10 +26,41 @@ export default function App() {
         <BrowserRouter>
           <Layout>
             <Routes>
+              {/* Auth */}
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signup" element={<SignupPage />} />
+
+              {/* Items */}
               <Route path="/items" element={<ItemsPage />} />
               <Route path="/items/:id" element={<ItemDetailPage />} />
+
+              {/* User Items */}
+              <Route
+                path="/my-items"
+                element={
+                  <PrivateRoute>
+                    <MyItemsPage />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/items/create"
+                element={
+                  <PrivateRoute>
+                    <CreateItemPage />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/items/edit/:id"
+                element={
+                  <PrivateRoute>
+                    <EditItemPage />
+                  </PrivateRoute>
+                }
+              />
+
+              {/* Cart */}
               <Route
                 path="/cart"
                 element={
@@ -36,6 +69,9 @@ export default function App() {
                   </PrivateRoute>
                 }
               />
+
+              {/* Redirect unknown routes */}
+              <Route path="*" element={<Navigate to="/items" />} />
             </Routes>
           </Layout>
         </BrowserRouter>
