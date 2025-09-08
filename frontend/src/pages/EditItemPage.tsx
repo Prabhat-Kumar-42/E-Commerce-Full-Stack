@@ -37,7 +37,7 @@ export default function EditItemPage() {
         );
       })
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      .catch((err) => setError("Failed to fetch item data"))
+      .catch((_err) => setError("Failed to fetch item data"))
       .finally(() => setLoading(false));
   }, [id]);
 

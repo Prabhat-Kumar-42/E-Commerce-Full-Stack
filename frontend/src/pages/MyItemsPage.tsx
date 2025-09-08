@@ -30,6 +30,7 @@ export default function MyItemsPage() {
 
   useEffect(() => {
     fetchUserItems();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleEdit = (id: string) => {
