@@ -1,5 +1,3 @@
----
-
 # 🛒 E-Commerce Full Stack Assignment
 
 A full-stack **E-Commerce Application** with:
